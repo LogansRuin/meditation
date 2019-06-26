@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 import { Header } from 'semantic-ui-react';
 
 class App extends React.Component {
