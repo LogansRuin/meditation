@@ -2,10 +2,15 @@ import React from 'react'
 import { Button, Grid, Header } from 'semantic-ui-react'
 
 class Timer extends React.Component {
+  state = {
+    minutes: '09',
+    seconds: '59'
+  }
+
   render () {
     return (
       <>
-        <p>10:00</p>
+        <p>{this.state.minutes}:{this.state.seconds}</p>
         <Button inverted secondary fluid>Start</Button>
         <Grid columns = {2}>
           <Grid.Column>
