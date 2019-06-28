@@ -5,7 +5,7 @@ const ClockFace = ({seconds, minutes}) => {
     <div>
       <span id="minutes">{minutes}</span>
       <span id="clockSeperator">:</span>
-      <span id="secons">{seconds}</span>
+      <span id="seconds">{seconds}</span>
     </div>
   )
 }
