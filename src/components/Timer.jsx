@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Grid, Header } from 'semantic-ui-react'
+import ClockFace from './ClockFace';
 
 class Timer extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class Timer extends React.Component {
   render () {
     return (
       <>
-        <p>{this.state.minutes}:{this.state.seconds}</p>
+        <ClockFace seconds = {this.state.seconds} minutes = {this.state.minutes}/>
         <Button inverted secondary fluid onClick = {this.reduceSeconds}>Start</Button>
         <Grid columns = {2}>
           <Grid.Column>
