@@ -1,11 +1,13 @@
 import React from 'react'
 
-const ClockFace = ({seconds, minutes}) => {
+const ClockFace = ({seconds, minutes, microSeconds}) => {
   return (
     <div>
       <span id="minutes">{minutes}</span>
-      <span id="clockSeperator">:</span>
+      <span class="clockSeperator">:</span>
       <span id="seconds">{seconds}</span>
+      <span class="clockSeperator">:</span>
+      <span id="microSeconds">{microSeconds}</span>
     </div>
   )
 }
