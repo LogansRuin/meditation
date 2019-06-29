@@ -5,36 +5,23 @@ import ClockFace from './ClockFace';
 class Timer extends React.Component {
   state = {
     minutes: 9,
-    seconds: 59,
+    seconds: 5,
     microSeconds: 59
   }
 
-  reduceMicroSeconds = () => {
-    const microSeconds = this.state.minutes - 1
-    this.setState( { microSeconds } )
-  }
-
-  reduceSeconds = () => {
+  reduceTime = () => {
     const seconds = this.state.seconds - 1
     this.setState( { seconds } )
   }
 
-  reduceMinutes = () => {
-    const minutes = this.state.minutes - 1
-    this.setState( { minutes } )
-  }
-
   startTimer = () => {
-    this.minutes = setInterval(this.reduceMinutes, 60000)
-    this.seconds = setInterval(this.reduceSeconds, 1000)
-    this.microSeconds = setInterval(this.reduceMicroSeconds, 10)
+    this.timerInterval = setInterval(this.reduceTime, 1000)
   }
 
   stopTimer = () => {
-    clearInterval(this.minutes)
-    clearInterval(this.seconds)
-    clearInterval(this.microSeconds)
+    clearInterval(this.timerInterval)
   }
+
   render () {
     return (
       <>
