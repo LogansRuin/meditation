@@ -4,8 +4,8 @@ import ClockFace from './ClockFace';
 
 class Timer extends React.Component {
   state = {
-    minutes: 0,
-    seconds: 5,
+    minutes: 10,
+    seconds: 0,
     active: false
   }
 
