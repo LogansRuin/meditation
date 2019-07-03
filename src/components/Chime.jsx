@@ -9,8 +9,6 @@ class Chime extends React.Component {
       <Sound
         url={soundFile}
         playStatus={Sound.status[this.props.playStatus]}
-        onLoading={this.handleSongLoading}
-        onPlaying={this.handleSongPlaying}
         onFinishedPlaying={this.props.handleSongFinishedPlaying}
       />
     )
