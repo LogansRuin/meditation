@@ -11,7 +11,6 @@ class Timer extends React.Component {
     active: false,
     playStatus: 'STOPPED'
   }
-
   reduceTime = () => {
     // I need some logic that checks to see if the timer is finished or not.
     let minutes = this.state.minutes
@@ -36,7 +35,7 @@ class Timer extends React.Component {
 
   stopTimer = () => {
     clearInterval(this.timerInterval)
-    this.setState( { active: false, playStatus: 'STOPPED' } )
+    this.setState( { active: false, playStatus: 'STOPPED', minutes: 10, seconds: 0} )
   }
 
   handleSongFinishedPlaying  = () => {
