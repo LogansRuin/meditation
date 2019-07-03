@@ -39,6 +39,10 @@ class Timer extends React.Component {
     this.setState( { active: false, playStatus: 'STOPPED' } )
   }
 
+  handleSongFinishedPlaying  = () => {
+    this.setState( {playStatus: 'STOPPED'} )
+  }
+
   render () {
     return (
       <>
@@ -65,7 +69,7 @@ class Timer extends React.Component {
             </Grid.Row>
           </Grid>
         </Container>
-        <Chime playStatus={this.state.playStatus}/>
+        <Chime playStatus={this.state.playStatus} handleSongFinishedPlaying={this.handleSongFinishedPlaying}/>
       </>
     )
   }
