@@ -1,18 +1,19 @@
 import React from 'react'
 import { Button, Grid, Header, Container } from 'semantic-ui-react'
 import ClockFace from './ClockFace';
+import Chime from './Chime';
+
 
 class Timer extends React.Component {
   state = {
     minutes: 10,
     seconds: 0,
-    active: false
+    active: false,
+    playStatus: 'STOPPED'
   }
 
   reduceTime = () => {
     // I need some logic that checks to see if the timer is finished or not.
-
-    //if the seconds is equal to 0 then check if minutes 
     let minutes = this.state.minutes
     let seconds = this.state.seconds
     
@@ -30,12 +31,12 @@ class Timer extends React.Component {
 
   startTimer = () => {
     this.timerInterval = setInterval(this.reduceTime, 1000)
-    this.setState( { active: true } )
+    this.setState( { active: true, playStatus: 'PLAYING' } )
   }
 
   stopTimer = () => {
     clearInterval(this.timerInterval)
-    this.setState( { active: false } )
+    this.setState( { active: false, playStatus: 'STOPPED' } )
   }
 
   render () {
@@ -64,6 +65,7 @@ class Timer extends React.Component {
             </Grid.Row>
           </Grid>
         </Container>
+        <Chime playStatus={this.state.playStatus}/>
       </>
     )
   }
